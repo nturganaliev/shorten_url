@@ -55,8 +55,7 @@ pip install -r requirements.txt
 python3 main.py "url_to_shorten"
 
 ```
-<<<<<<< HEAD
-=======
+
 Если набранный в терминале url не является уже укороченным, получаете вывод похожий ниже:
 
 
@@ -72,7 +71,6 @@ python3 main.py "url_to_shorten"
 (.venv) user@host:shorten_url$ python main.py https://bit.ly/3FRajAt
 По вашей ссылке прошли 8 раз(а)
 ```
->>>>>>> c960186851a670429e86738500f2248de3ae5a59
 
 
 ### Цель проекта
