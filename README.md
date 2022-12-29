@@ -55,6 +55,25 @@ pip install -r requirements.txt
 python3 main.py "url_to_shorten"
 
 ```
+<<<<<<< HEAD
+=======
+
+Если набранный в терминале url не является уже укороченным, получаете вывод похожий ниже:
+
+
+```bash
+(.venv) user@host:shorten_url$ python main.py https://replit.com/@NurlanTurganali/shortenurl#main.py
+Битлинк bit.ly/3FRajAt
+
+```
+
+В противном случае, количество переходов через ссылку:
+
+```bash
+(.venv) user@host:shorten_url$ python main.py https://bit.ly/3FRajAt
+По вашей ссылке прошли 8 раз(а)
+```
+>>>>>>> 4d58ccee8e5ea6d38f721fada89c36e88496c751
 
 
 ### Цель проекта
