@@ -12,9 +12,9 @@ def shorten_url(token, url):
         'Authorization': f'Bearer {token}',
         'Content-Type': 'application/json',
     }
-    data = {"long_url": url}
+    url = {"long_url": url}
     response = requests.post('https://api-ssl.bitly.com/v4/shorten',
-                             json=data, headers=headers)
+                             json=url, headers=headers)
     response.raise_for_status()
     return response.json()['id']
 
@@ -51,13 +51,12 @@ def main():
             type=str
     )
     args = parser.parse_args()
-    user_input = args.url
     try:
-        if not is_bitlink(token, user_input):
-            bitlink = shorten_url(token, user_input)
+        if not is_bitlink(token, args.url):
+            bitlink = shorten_url(token, args.url)
             print(f"Битлинк {bitlink}")
             return
-        count = count_clicks(token, user_input)
+        count = count_clicks(token, args.url)
         print(f"По вашей ссылке прошли {count} раз(а)")
     except requests.exceptions.RequestException as e:
         print(f"Проверьте ссылку на правильность.\n{e}")
